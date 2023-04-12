@@ -1,0 +1,17 @@
+D:\BinaryViewer\BinaryViewer\bin\Debug\net7.0-windows\BinaryViewer.exe
+D:\BinaryViewer\BinaryViewer\bin\Debug\net7.0-windows\BinaryViewer.deps.json
+D:\BinaryViewer\BinaryViewer\bin\Debug\net7.0-windows\BinaryViewer.runtimeconfig.json
+D:\BinaryViewer\BinaryViewer\bin\Debug\net7.0-windows\BinaryViewer.dll
+D:\BinaryViewer\BinaryViewer\bin\Debug\net7.0-windows\BinaryViewer.pdb
+D:\BinaryViewer\BinaryViewer\obj\Debug\net7.0-windows\BinaryViewer.csproj.AssemblyReference.cache
+D:\BinaryViewer\BinaryViewer\obj\Debug\net7.0-windows\BinaryViewer.Form1.resources
+D:\BinaryViewer\BinaryViewer\obj\Debug\net7.0-windows\BinaryViewer.csproj.GenerateResource.cache
+D:\BinaryViewer\BinaryViewer\obj\Debug\net7.0-windows\BinaryViewer.GeneratedMSBuildEditorConfig.editorconfig
+D:\BinaryViewer\BinaryViewer\obj\Debug\net7.0-windows\BinaryViewer.AssemblyInfoInputs.cache
+D:\BinaryViewer\BinaryViewer\obj\Debug\net7.0-windows\BinaryViewer.AssemblyInfo.cs
+D:\BinaryViewer\BinaryViewer\obj\Debug\net7.0-windows\BinaryViewer.csproj.CoreCompileInputs.cache
+D:\BinaryViewer\BinaryViewer\obj\Debug\net7.0-windows\BinaryViewer.dll
+D:\BinaryViewer\BinaryViewer\obj\Debug\net7.0-windows\refint\BinaryViewer.dll
+D:\BinaryViewer\BinaryViewer\obj\Debug\net7.0-windows\BinaryViewer.pdb
+D:\BinaryViewer\BinaryViewer\obj\Debug\net7.0-windows\BinaryViewer.genruntimeconfig.cache
+D:\BinaryViewer\BinaryViewer\obj\Debug\net7.0-windows\ref\BinaryViewer.dll
