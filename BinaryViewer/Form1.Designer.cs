@@ -36,6 +36,7 @@
             label1 = new Label();
             label2 = new Label();
             read_button = new Button();
+            save_button = new Button();
             SuspendLayout();
             // 
             // filePath_textBox
@@ -112,11 +113,22 @@
             read_button.UseVisualStyleBackColor = true;
             read_button.Click += read_button_Click;
             // 
+            // save_button
+            // 
+            save_button.Location = new Point(153, 67);
+            save_button.Name = "save_button";
+            save_button.Size = new Size(99, 23);
+            save_button.TabIndex = 8;
+            save_button.Text = "Сохранить";
+            save_button.UseVisualStyleBackColor = true;
+            save_button.Click += save_button_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 471);
+            Controls.Add(save_button);
             Controls.Add(read_button);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -143,5 +155,6 @@
         private Label label1;
         private Label label2;
         private Button read_button;
+        private Button save_button;
     }
 }

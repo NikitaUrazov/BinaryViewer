@@ -85,5 +85,31 @@ namespace BinaryViewer
 
             }
         }
+
+        private void save_button_Click(object sender, EventArgs e)
+        {
+            if (result_textBox.Text == "")
+            {
+                MessageBox.Show("Нечего сохранять");
+                return;
+            }
+
+            string saveFile = "";
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.ShowDialog();
+                saveFile = openFileDialog.FileName;
+            }
+
+            if (!File.Exists(saveFile))
+                return;
+
+            StreamWriter sr = new StreamWriter(saveFile);
+            string s = result_textBox.Text;
+            sr.Write(s);
+            sr.Close();
+            sr.Dispose();
+        }
     }
 }
