@@ -1,3 +1,6 @@
+using System.Runtime.InteropServices;
+using System.Threading;
+
 namespace BinaryViewer
 {
     public partial class Form1 : Form
@@ -10,14 +13,17 @@ namespace BinaryViewer
 
         private void filePath_button_Click(object sender, EventArgs e)
         {
-            string file = filePath_textBox.Text;
-            if (!File.Exists(file))
+            string fileName = "";
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                MessageBox.Show("Файл не найден");
-                return;
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.ShowDialog();
+
+                fileName = openFileDialog.FileName;
             }
-            BinaryViewer.Read(file);
-            result_textBox.Text = File.ReadAllText(BinaryViewer.Result);
+
+            filePath_textBox.Text = fileName;
         }
 
         private void offset_button_Click(object sender, EventArgs e)
@@ -34,7 +40,8 @@ namespace BinaryViewer
                 return;
             }
 
-            long position = BinaryViewer.GetOffsetPosition(offset);
+
+            long position = BinaryViewer.GetOffsetPosition(offset, result_textBox.Text.Split('\n'));
             if (position == -1)
             {
                 MessageBox.Show("Error");
@@ -44,6 +51,39 @@ namespace BinaryViewer
             result_textBox.SelectionStart = (int)position;
             result_textBox.SelectionLength = 2;
             result_textBox.ScrollToCaret();
+        }
+
+        private void read_button_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists(filePath_textBox.Text))
+            {
+                MessageBox.Show("Файл не найден");
+                return;
+            }
+
+            long begin_offset = -1;
+            long end_offset = -1;
+
+            using (ReadSettings readSettings = new ReadSettings(filePath_textBox.Text))
+            {
+                readSettings.ShowDialog();
+
+                if (readSettings.DialogResult == DialogResult.OK)
+                {
+                    begin_offset = readSettings.BeginOffset;
+                    end_offset = readSettings.EndOffset;
+                    //BinaryViewer.Read(filePath_textBox.Text, begin_offset, end_offset, ref result_textBox);
+                    BinaryViewer.TargetTextBox = result_textBox;
+                    BinaryViewer.BeginOffset = begin_offset;
+                    BinaryViewer.EndOffset = end_offset;
+                    BinaryViewer.Source = filePath_textBox.Text;
+
+                    BinaryViewer.Read();
+                    //Thread thread = new Thread(BinaryViewer.Test);
+                    //thread.Start();
+                }
+
+            }
         }
     }
 }
